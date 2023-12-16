@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node
+    working_dir: /works
+    tty: true
+    ports:
+      - 4567:4567
+    volumes:
+      - type: bind
+        source: .
+        target: /works
+      - type: bind
+        source: ./scripts/jsparser
+        target: /opt/jsparser/jsparser
+      - type: volume
+        source: node_modules
+        target: /works/node_modules
+
+volumes:
+  node_modules:
