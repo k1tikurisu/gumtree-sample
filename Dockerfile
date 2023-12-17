@@ -34,7 +34,5 @@ RUN npm --prefix=/opt/jsparser/ install @babel/parser @babel/traverse xml-writer
   && ln -s /opt/gumtree/dist/bin/gumtree /usr/bin/gumtree \ 
   && ln -s /opt/jsparser/jsparser /usr/bin/jsparser 
 
-RUN chmod +x ${APP_ROOT}/scripts/jsparser
-
 # webdiff
 EXPOSE 4567
